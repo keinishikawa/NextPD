@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>BLOG</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <script src="/send_url.js"></script>
+    <%- include("./parts/head.ejs"); %>  
   </head>
   <body>
     <div class="sign">
       <div class="container">
-        <h1><a href="/list">BLOG</a></h1>
+        <%- include("parts/servicename.ejs"); %>
         <div class="panel">
           <h2>ログイン</h2>
           <form action="/login" method="post">
             <p>メールアドレス</p>
             <input type="text" name="email">
+            <p>メールアドレス</p>
+            <input type="text" name="email">
             <p>パスワード</p>
             <input type="password" name="password">
             <input type="submit" value="ログイン">
-            <a href="/list">一覧にもどる</a>
+            <a href="/signup">新規登録</a>
+            <a href="/forgetpassword" class="linkbox">パスワードを忘れたら</a>
           </form>
         </div>
       </div>

@@ -1,9 +1,8 @@
-<header>
+<body>
     <div class="header-nav">
-      <a href="/">BLOG</a>
+      <a href="/top">NextPD</a>
       <p>ようこそ、<%= locals.username %>さん</p>
       <ul>
-        <li><a href="/list">記事一覧</a></li>
         <% if (locals.isLoggedIn) { %>
           <li><a href="/logout">ログアウト</a></li>
         <% } else { %>
@@ -12,6 +11,6 @@
         <% } %>
       </ul>
     </div>
-    <p>わんこの学びブログ</p>
-  </header>
+
+</body>
   

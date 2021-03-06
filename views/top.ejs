@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>BLOG</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <script src="/send_url.js"></script>
+    <%- include("./parts/head.ejs"); %>  
   </head>
   <body>
+    <%- include("./parts/header.ejs");  %> 
     <div class="top">
       <div class="wrapper">
         <div class="content">
-          <h2>わんこの学びブログ</h2>
-          <h1><img src="/images/top-logo.png" alt=""></h1>
-          <p>プログラミングに関する雑学ブログ。<br>だれかに教えたくなる豆知識をお届けします。</p>
-          <a class="btn" href="/list">読みはじめる</a>
+          <a class="btn" href="/matching-main">マッチング開始</a>
         </div>
-        <img class="image" src="/images/top.png" alt="">
+        <div class="sub-content">
+          <a class="btn" href="/friends-list">友達リスト</a>
+          <a class="btn" href="/profile-main">マイステータス</a>
+        </div>
       </div>
     </div>
   </body>
