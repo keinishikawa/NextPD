@@ -98,7 +98,7 @@ app.use(
               req.session.username = results[0].username;
               req.session.email = results[0].email;
               req.session.status = results[0].status;
-              res.redirect('/top');
+              res.redirect('/home');
             } else {
               console.log("false");
               res.redirect('/login');
@@ -187,7 +187,7 @@ app.use(
             req.session.userId = results.insertId;
             req.session.username = username;
             req.session.email = email;
-            res.redirect('/top');
+            res.redirect('/home');
           }
         );
       });
@@ -212,8 +212,8 @@ app.use(
 
 // ============トップ画面以降の処理=======================
   //ログイン情報に応じたトップ画面の表示処理
-  app.get('/top', (req, res) => {
-    res.render('top.ejs');
+  app.get('/home', (req, res) => {
+    res.render('home.ejs');
   });
 
 
