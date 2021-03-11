@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <%- include("./parts/head.ejs"); %>  
+    <%- include("../../parts/head.ejs"); %>  
   </head>
   <body>
     <div class="sign">
       <div class="container">
-        <%- include("parts/servicename.ejs"); %>
+        <%- include("../../parts/servicename.ejs"); %>
         <div class="panel">
-          <h2>ログイン</h2>
-          <form action="/login" method="post">
-            <p>メールアドレス</p>
-            <input type="text" name="email">
+          <!-- <h2>ログイン</h2> -->
+          <form action="/admin" method="post">
+            <p>コーポレートID</p>
+            <input type="text" name="corporateId">
+            <div class="text_underline"></div>
             <p>メールアドレス</p>
             <input type="text" name="email">
             <p>パスワード</p>
             <input type="password" name="password">
             <input type="submit" value="ログイン">
-            <a href="/signup">新規登録</a>
-            <a href="/forgetpassword" class="linkbox">パスワードを忘れたら</a>
+            <a href="/admin/forgetpassword" class="linkbox">パスワードを忘れたら</a>
           </form>
         </div>
       </div>

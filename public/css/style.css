@@ -61,7 +61,7 @@ a {
 
 .article-forms > i {
   position: absolute;
-  home: -45px;
+  top: -45px;
   right: 0;
   font-style: normal;
   font-weight: bold;
@@ -111,7 +111,7 @@ a {
   padding: 4px 20px;
   font-style: normal;
   margin-bottom: 24px;
-  margin-home: 0px;
+  margin-top: 0px;
 }
 
 .article-login {
@@ -128,7 +128,7 @@ a {
 
 .article-login p:nth-child(2) {
   font-size: 18px;
-  margin-home: 30px;
+  margin-top: 30px;
   line-height: 1.8;
 }
 
@@ -137,7 +137,7 @@ a {
 }
 
 .article-login a + p {
-  margin-home: 36px;
+  margin-top: 36px;
   font-weight: bold;
   font-size: 14px;
 }
@@ -264,7 +264,7 @@ a {
   border-radius: 6px;
   list-style: outside;
   background-color: #fff;
-  margin-home: 30px;
+  margin-top: 30px;
 }
 
 footer {
@@ -441,7 +441,7 @@ header > p:after {
 
 .list li:not(:first-child),
 .list-admin li:not(:first-child) {
-  margin-home: 20px;
+  margin-top: 20px;
 }
 
 .list h2,
@@ -466,7 +466,7 @@ header > p:after {
   padding: 3px 16px;
   font-style: normal;
   margin-bottom: 12px;
-  margin-home: 5px;
+  margin-top: 5px;
   letter-spacing: 0.05em;
 }
 
@@ -487,7 +487,7 @@ header > p:after {
 }
 
 .list-admin {
-  margin-home: 30px;
+  margin-top: 30px;
   padding-bottom: 80px;
 }
 
@@ -498,12 +498,12 @@ header > p:after {
 }
 
 .list-admin li:not(:first-child) {
-  margin-home: -1px;
+  margin-top: -1px;
 }
 
 .list-admin li:first-child {
-  border-home-left-radius: 6px;
-  border-home-right-radius: 6px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
 }
 
 .list-admin li:last-child {
@@ -517,7 +517,7 @@ header > p:after {
   align-items: center;
   justify-content: center;
   height: 100%;
-  home: 0;
+  top: 0;
   right: 0;
   width: 160px;
 }
@@ -562,7 +562,7 @@ main {
 }
 
 .sign > .container > p {
-  margin-home: 36px;
+  margin-top: 36px;
   font-weight: bold;
   font-size: 14px;
   text-align: center;
@@ -579,12 +579,16 @@ main {
 }
 
 .sign > .container form {
-  padding-home: 40px;
+  padding-top: 40px;
 }
 
 .sign .panel {
-  padding: 60px 80px 40px;
+  padding: 10px 80px 40px;
   background-color: #F6FAFF;
+}
+
+.panel h2{
+  padding-top: 25px ;
 }
 
 .sign h1 {
@@ -618,16 +622,16 @@ main {
   box-shadow: 0 0 0px 1000px #fff inset;
 }
 
-.sign input[name="username"] {
-  margin-bottom: 30px;
+select{
+  margin-bottom: 20px;
 }
 
-.sign input[name="email"] {
-  margin-bottom: 30px;
+.sign input{
+  margin-bottom: 20px;
 }
 
 .sign input[type="submit"] {
-  margin-home: 50px;
+  margin-top: 50px;
   width: 90%;
 }
 
@@ -680,11 +684,11 @@ main {
 }
 
 .home a {
-  margin-home: 230px;
+  margin-top: 230px;
 }
 
 .linkbox{
-  padding: 0 0;
+  padding: 30px 0 20px 0;
 }
 
 .home .image {
@@ -692,7 +696,7 @@ main {
   position: absolute;
   width: 1000px;
   min-width: 1000px;
-  home: 0;
+  top: 0;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -733,4 +737,12 @@ input[type="submit"].btn-confirm.sub:hover {
   text-align: center;
   margin: auto;
   display:inline-flex
+}
+
+.container img{
+  padding: 20px 120px 40px 120px;
+}
+
+.btn{
+  margin-bottom:50px ;
 }

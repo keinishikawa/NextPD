@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include("../../parts/head.ejs"); %>  
+  </head>
+  <body>
+    <%- include('../../parts/header.ejs'); %>
+    <main>
+      <ul class="list">
+        <% friends.forEach((friend) => { %>
+        <li>
+          <h2><%= friend.username %></h2>
+          <p><%= friend.email %></p>
+          <a href="browse/friend/<%= friend.id %>">続きを読む</a>
+        </li>
+        <% }) %>
+      </ul>
+    </main>
+  </body>
+</html>

@@ -3,12 +3,8 @@
       <a href="/home">NextPD</a>
       <p>ようこそ、<%= locals.username %>さん</p>
       <ul>
-        <% if (locals.isLoggedIn) { %>
+          <li><a href="/settingAccount">設定</a></li>
           <li><a href="/logout">ログアウト</a></li>
-        <% } else { %>
-          <li><a href="/signup">新規登録</a></li>
-          <li><a href="/login">ログイン</a></li>
-        <% } %>
       </ul>
     </div>
 

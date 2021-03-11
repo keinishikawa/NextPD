@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <%- include("./parts/head.ejs"); %>  
+    <%- include("../../parts/head.ejs"); %>  
   </head>
   <body>
-    <%- include('./parts/header'); %>
+    <%- include('../../parts/header.ejs'); %>
     <main>
       <ul class="list">
         <% friends.forEach((friend) => { %>
         <li>
           <h2><%= friend.username %></h2>
           <p><%= friend.email %></p>
-          <a href="/friend/<%= friend.id %>">続きを読む</a>
+          <a href="/admin/friend/<%= friend.id %>">続きを読む</a>
         </li>
         <% }) %>
       </ul>
