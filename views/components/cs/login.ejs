@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <%- include("../../parts/head.ejs"); %>  
+    <%- include("../../parts/head.ejs"); %>
   </head>
   <body>
     <div class="sign">
@@ -10,11 +10,13 @@
         <div class="panel">
           <form action="/cs" method="post">
             <p>メールアドレス</p>
-            <input type="text" name="email">
+            <input type="text" name="email" />
             <p>パスワード</p>
-            <input type="password" name="password">
-            <input type="submit" value="ログイン">
-            <a href="browse/forgetpassword" class="linkbox">パスワードを忘れたら</a>
+            <input type="password" name="password" />
+            <input type="submit" value="ログイン" />
+            <a href="browse/forgetpassword" class="linkbox"
+              >パスワードを忘れたら</a
+            >
           </form>
         </div>
       </div>

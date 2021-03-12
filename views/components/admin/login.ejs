@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <%- include("../../parts/head.ejs"); %>  
+    <%- include("../../parts/head.ejs"); %>
   </head>
   <body>
     <div class="sign">
@@ -11,14 +11,16 @@
           <!-- <h2>ログイン</h2> -->
           <form action="/admin" method="post">
             <p>コーポレートID</p>
-            <input type="text" name="corporateId">
+            <input type="text" name="corporateId" />
             <div class="text_underline"></div>
             <p>メールアドレス</p>
-            <input type="text" name="email">
+            <input type="text" name="email" />
             <p>パスワード</p>
-            <input type="password" name="password">
-            <input type="submit" value="ログイン">
-            <a href="/admin/forgetpassword" class="linkbox">パスワードを忘れたら</a>
+            <input type="password" name="password" />
+            <input type="submit" value="ログイン" />
+            <a href="/admin/forgetpassword" class="linkbox"
+              >パスワードを忘れたら</a
+            >
           </form>
         </div>
       </div>
