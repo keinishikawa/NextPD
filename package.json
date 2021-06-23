@@ -1,10 +1,11 @@
 {
-  "name": "noappo",
+  "name": "nextpd",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha",
+    "start": "nodemon app.js"
   },
   "keywords": [],
   "author": "",
@@ -14,9 +15,13 @@
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "serve-index": "^1.9.1"
   },
   "devDependencies": {
-    "gulp-ejs": "^5.1.0"
+    "gulp-ejs": "^5.1.0",
+    "mocha": "^8.3.2",
+    "nodemon": "^2.0.7",
+    "power-assert": "^1.6.1"
   }
 }

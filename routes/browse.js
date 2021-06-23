@@ -4,6 +4,7 @@ const express = require("express");
 const mysql = require("mysql");
 const session = require("express-session");
 const bcrypt = require("bcrypt");
+const http = require("http");
 
 // DBへの接続
 const connection = mysql.createConnection({
@@ -19,7 +20,6 @@ connection.connect(err => {
     console.log("error connecting:" + err.stack);
     return;
   }
-  console.log("success");
 });
 
 // ************browse******************
@@ -29,6 +29,7 @@ connection.connect(err => {
 
 module.exports = () => {
   const router = express.Router();
+  router.use(express.static("public"));
 
   // リクエスト時に毎回処理する内容
   // セッション確立
@@ -59,7 +60,7 @@ module.exports = () => {
   });
 
   router.get("/", (req, res) => {
-    res.render("./components/browse/login.ejs");
+    res.render("./browse/login.ejs");
   });
   // ログインリクエストをポストしたときの処理
   router.post("/", (req, res) => {
@@ -95,7 +96,7 @@ module.exports = () => {
 
   // パスワードを忘れたら画面の表示
   router.get("/forgetpassword", (req, res) => {
-    res.render("./components/browse/forgetpassword.ejs");
+    res.render("./browse/forgetpassword.ejs");
   });
 
   //ログアウト時の処理
@@ -110,7 +111,7 @@ module.exports = () => {
   // ============トップ画面以降の処理=======================
   //ログイン情報に応じたトップ画面の表示処理
   router.get("/home", (req, res) => {
-    res.render("./components/browse/home.ejs");
+    res.render("./browse/home.ejs");
   });
 
   router.get("/friends-list", (req, res) => {
@@ -119,7 +120,7 @@ module.exports = () => {
       "SELECT * FROM users WHERE email <> ?",
       [email],
       (error, results) => {
-        res.render("./components/browse/friends-list.ejs", {
+        res.render("./browse/friends-list.ejs", {
           friends: results
         });
       }
@@ -133,7 +134,7 @@ module.exports = () => {
       "SELECT * FROM articles WHERE id = ?",
       [id],
       (error, results) => {
-        res.render("./components/browse/article.ejs", { article: results[0] });
+        res.render("./browse/article.ejs", { article: results[0] });
       }
     );
   });
@@ -150,7 +151,7 @@ module.exports = () => {
         } else {
           res.locals.status = "暇やない";
         }
-        res.render("./components/browse/profile-main.ejs");
+        res.render("./browse/profile-main.ejs");
       }
     );
   });
@@ -183,11 +184,15 @@ module.exports = () => {
       "SELECT * FROM users WHERE status=1 AND email <> ?",
       [email],
       (error, results) => {
-        res.render("./components/browse/matching-main.ejs", {
+        res.render("./browse/matching-main.ejs", {
           freeFriends: results
         });
       }
     );
+  });
+
+  router.post("/api/download", (req, res) => {
+    let url = "https://";
   });
 
   return router;

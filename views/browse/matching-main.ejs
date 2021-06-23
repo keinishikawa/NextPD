@@ -1,0 +1,12 @@
+<%- include("../partials/head.ejs"); %> <%- include('../browse/header.ejs'); %>
+<main>
+  <ul class="list">
+    <% freeFriends.forEach((freeFriend) => { %>
+    <li>
+      <h2><%= freeFriend.username %></h2>
+      <p><%= freeFriend.email %></p>
+    </li>
+    <% }) %>
+  </ul>
+</main>
+<%- include("../partials/footer.ejs"); %>

@@ -19,7 +19,6 @@ connection.connect(err => {
     console.log("error connecting:" + err.stack);
     return;
   }
-  console.log("success");
 });
 
 // ============adminログイン関連処理=======================
@@ -27,7 +26,7 @@ connection.connect(err => {
 // ログイン画面の表示
 module.exports = () => {
   const router = express.Router();
-
+  router.use(express.static("public"));
   // リクエスト時に毎回処理する内容
   // セッション確立
   router.use(
@@ -57,7 +56,7 @@ module.exports = () => {
   });
 
   router.get("/", (req, res) => {
-    res.render("./components/admin/login.ejs");
+    res.render("./admin/login.ejs");
   });
 
   // ログインリクエストをポストしたときの処理
@@ -96,7 +95,7 @@ module.exports = () => {
 
   // パスワードを忘れたら画面の表示
   router.get("/forgetpassword", (req, res) => {
-    res.render("./components/admin/forgetpassword.ejs");
+    res.render("./admin/forgetpassword.ejs");
   });
 
   //ログアウト時の処理
@@ -116,14 +115,14 @@ module.exports = () => {
       "SELECT * from users WHERE corporateId=?",
       [corporateId],
       (error, results) => {
-        res.render("./components/admin/home.ejs", { corporateUsers: results });
+        res.render("./admin/home.ejs", { corporateUsers: results });
       }
     );
   });
 
   // 新規登録画面の表示
   router.get("/signup", (req, res) => {
-    res.render("./components/admin/signup.ejs", { errors: [] });
+    res.render("./admin/signup.ejs", { errors: [] });
   });
 
   // ポスト時の処理
@@ -150,7 +149,7 @@ module.exports = () => {
       }
 
       if (errors.length > 0) {
-        res.render("./components/admin/signup.ejs", { errors: errors });
+        res.render("./admin/signup.ejs", { errors: errors });
       } else {
         next();
       }
@@ -167,7 +166,7 @@ module.exports = () => {
         (error, results) => {
           if (results.length > 0) {
             errors.push("ユーザー登録に失敗しました");
-            res.render("./components/admin/signup.ejs", { errors: errors });
+            res.render("./admin/signup.ejs", { errors: errors });
           } else {
             next();
           }

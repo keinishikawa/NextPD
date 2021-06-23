@@ -19,7 +19,6 @@ connection.connect(err => {
     console.log("error connecting:" + err.stack);
     return;
   }
-  console.log("success");
 });
 
 // ************cs******************
@@ -28,9 +27,10 @@ connection.connect(err => {
 
 module.exports = () => {
   const router = express.Router();
+  router.use(express.static("public"));
   // ログイン画面の表示
   router.get("/", (req, res) => {
-    res.render("./components/cs/login.ejs");
+    res.render("./cs/login.ejs");
   });
 
   // ログインリクエストをポストしたときの処理
@@ -67,12 +67,12 @@ module.exports = () => {
 
   // パスワードを忘れたら画面の表示
   router.get("/forgetpassword", (req, res) => {
-    res.render("./components/cs/forgetpassword.ejs");
+    res.render("./cs/forgetpassword.ejs");
   });
 
   // 新規登録画面の表示
   router.get("/signup", (req, res) => {
-    res.render("./components/cs/signup.ejs", { errors: [] });
+    res.render("./cs/signup.ejs", { errors: [] });
   });
 
   // ポスト時の処理
@@ -99,7 +99,7 @@ module.exports = () => {
       }
 
       if (errors.length > 0) {
-        res.render("./components/cs/signup.ejs", { errors: errors });
+        res.render("./cs/signup.ejs", { errors: errors });
       } else {
         next();
       }
@@ -115,7 +115,7 @@ module.exports = () => {
         (error, results) => {
           if (results.length > 0) {
             errors.push("ユーザー登録に失敗しました");
-            res.render("./components/cs/signup.ejs", { errors: errors });
+            res.render("./cs/signup.ejs", { errors: errors });
           } else {
             next();
           }
@@ -156,7 +156,7 @@ module.exports = () => {
   // ============トップ画面以降の処理=======================
   //ログイン情報に応じたトップ画面の表示処理
   router.get("/home", (req, res) => {
-    res.render("./components/cs/home.ejs");
+    res.render("./cs/home.ejs");
   });
 
   // コーポレート登録処理

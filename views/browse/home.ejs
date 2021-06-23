@@ -1,0 +1,55 @@
+<%- include("../partials/head.ejs"); %>
+
+<div class="home">
+  <header><%- include("../browse/header.ejs"); %></header>
+  <main>
+    <div class="mainView">
+      <div class="contentView">
+        <div class="leftToolBar">
+          <button class="button homeButton">
+            <a href="/browse/home">home</a>
+          </button>
+          <button class="button shareButton">
+            <a href="/browse/home">share</a>
+          </button>
+          <button class="button favoriteButton">
+            <a href="/browse/home">favorite</a>
+          </button>
+          <button class="button dustboxButton">
+            <a href="/browse/home">dustbox</a>
+          </button>
+        </div>
+        <div class="treeView">
+          <div class="dropZone">
+            <div class="treeViewItemsArea">
+              <div class="treeViewItem">
+                <button>home</button>
+              </div>
+              <div class="treeViewItem">
+                <button>folder1</button>
+              </div>
+              <div class="treeViewItem">
+                <button>folder2</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="splitBar">
+          <div class="splitBarLine">
+            <hr />
+          </div>
+        </div>
+        <div class="contentMiddle">
+          <div class="listView">
+            <div class="listViewTables" id="js-fileDownload">
+              <a href="">file1</a>
+              <div class="test">content1</div>
+              <script src="../models/js/download.js"></script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<%- include("../partials/footer.ejs"); %>

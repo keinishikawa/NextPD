@@ -1,0 +1,22 @@
+<%- include("../partials/head.ejs"); %>
+
+<div class="container">
+  <div class="login">
+    <%- include("../partials/servicename.ejs"); %>
+    <div class="panel">
+      <!-- <h2>ログイン</h2> -->
+      <form action="/admin" method="post">
+        <p>コーポレートID</p>
+        <input type="text" name="corporateId" />
+        <div class="text_underline"></div>
+        <p>メールアドレス</p>
+        <input type="text" name="email" />
+        <p>パスワード</p>
+        <input type="password" name="password" />
+        <input type="submit" value="ログイン" />
+        <a href="/admin/forgetpassword" class="linkbox">パスワードを忘れたら</a>
+      </form>
+    </div>
+  </div>
+</div>
+<%- include("../partials/footer.ejs"); %>

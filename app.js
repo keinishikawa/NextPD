@@ -8,6 +8,7 @@ const app = express();
 
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));
+app.set("view engine", "ejs");
 
 // ポート3000番でローカルホストサーバ起動
 app.listen(3000);
@@ -15,10 +16,9 @@ app.listen(3000);
 
 // ====================各ルーティング処理=======================
 
-//　ユーザ一般とCP管理者どっちの画面か選ぶ画面の表示
-app.get("/", (req, res) => {
-  res.render("./components/select-page-type.ejs");
-});
+
+// todos = require("./routes/todos");
+// app.use("/",todos());
 
 app.use("/browse", require("./routes/browse.js")());
 app.use("/admin", require("./routes/admin.js")());

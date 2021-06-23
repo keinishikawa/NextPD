@@ -1,0 +1,13 @@
+<%- include("partials/head.ejs"); %> <%- include('admin/header.ejs'); %>
+<main>
+  <ul class="list">
+    <% friends.forEach((friend) => { %>
+    <li>
+      <h2><%= friend.username %></h2>
+      <p><%= friend.email %></p>
+      <a href="/admin/friend/<%= friend.id %>">続きを読む</a>
+    </li>
+    <% }) %>
+  </ul>
+</main>
+<%- include("partials/footer.ejs"); %>

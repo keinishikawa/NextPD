@@ -1,0 +1,13 @@
+<%- include("../partials/head.ejs"); %> <%- include('../admin/header.ejs'); %>
+<main>
+  <ul class="list">
+    <li>
+      <h2><%= locals.username %></h2>
+      <p><%= locals.email %></p>
+      <form action="/change-status" method="POST">
+        <input type="submit" value="<%= locals.status %>" />
+      </form>
+    </li>
+  </ul>
+</main>
+<%- include("../partials/footer.ejs"); %>
